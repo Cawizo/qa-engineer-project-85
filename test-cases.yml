@@ -94,5 +94,181 @@
   expected-result: |
     Пользователь должен попасть на страницу регистрации
 
+- id: TC-007
+  summary: |
+    Успешная регистрация нового пользователя с корректными данными
+  requirement: |
+    При вводе корректных данных для регистрации, пользователю высылается код верификации на указанную почту
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Nickname = TestCawizo
+    Используем новый адрес Email, который не был ранее зарегистрирован на сайте 
+    Password = ***********
+  steps: 
+    - Нажимаем кнопку "Sign up" в шапке сайта
+    - Заполняем тестовыми данными поля Nickname, Email, Password, Password Confirmation
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Пользователь перенаправляется на страницу "Sign In" с сообщением "We sent a verification email. Please confirm your email before signing in."
 
+- id: TC-008
+  summary: |
+    Ошибка регистрации нового пользователя по email с некорректными Nickname
+  requirement: |
+    При вводе некорректного Nickname пользователь получает сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Nickname = 1
+    Email = test@mail.ru
+    Password = Test12345678
+  steps:
+    - Нажимаем кнопку "Sign up" в шапке сайта
+    - Заполняем тестовыми данными поля Nickname, Email, Password, Password Confirmation
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Некорректно заполнено поле Nickname. Пользователь получает подсказку о том, какие данные являются валидными. Регистрация не проходит
+
+- id: TC-009
+  summary: |
+    Ошибка регистрации нового пользователя по email с некорректными email
+  requirement: |
+    При вводе некорректного Email пользователь получает сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Nickname = TestTest
+    Email = test
+    Password = Test12345678
+  steps:
+    - Нажимаем кнопку "Sign up" в шапке сайта
+    - Заполняем тестовыми данными поля Nickname, Email, Password, Password Confirmation
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Некорректно заполнено поле Email. Пользователь получает подсказку о том, какие данные являются валидными. Регистрация не проходит
+    
+- id: TC-010
+  summary: |
+    Ошибки регистрации нового пользователя по email с некорректными Password
+  requirement: |
+    При вводе некорректного Password пользователь получает сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Nickname = TestTest
+    Email = test@mail.ru
+    Password = Test
+  steps:
+    - Нажимаем кнопку "Sign up" в шапке сайта
+    - Заполняем тестовыми данными поля Nickname, Email, Password, Password Confirmation
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Некорректно заполнено поле Password. Пользователь получает подсказку о том, какие данные являются валидными. Регистрация не проходит
+
+- id: TC-011
+  summary: |
+    Успешная регистрация нового пользователя через профиль на GitHub
+  requirement: |
+    При вводе данных логина и пароля от GitHub, пользователь успешно проходит регистрацию на сайте
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Логин на GitHub
+    Password на GitHub
+  steps:
+    - Нажимаем кнопку "Sign up" в шапке сайта
+    - Нажимаем кнопку "Sign up with GitHub"
+    - Вводим тестовые данные Логин и Пароль
+    - Нажимаем кнопку "Sign in"
+  expected-result: |
+    Пользователь должен быть перенаправлен авторизованным на главную страницу сайта
+
+- id: TC-012
+  summary: |
+    Успешная регистрация нового пользователя через профиль на Discord
+  requirement: |
+    При вводе данных логина и пароля от Discord, пользователь успешно проходит регистрацию на сайте
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Логин на Discord
+    Password на Discord
+  steps:
+    - Нажимаем кнопку "Sign up" в шапке сайта
+    - Нажимаем кнопку "Sign up with Discord"
+    - Вводим тестовые данные Логин и Пароль
+    - Нажимаем кнопку "Sign in"
+  expected-result: |
+    Пользователь должен быть перенаправлен авторизованным на главную страницу сайта
+
+- id: TC-013
+  summary: |
+    Успешная аутентификация пользователя по email с корректными данными
+  requirement: |
+    При вводе корректных данных email и пароля, пользователь успешно проходит аутентификацию на сайте
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Email = shatov102108@mail.ru
+    Password = **********
+  steps:
+    - Нажимаем кнопку "Sign in" в шапке сайта
+    - Заполняем тестовыми данными поля Email, Password
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Пользователь должен быть перенаправлен на главную страницу после успешной аутентификации
+
+- id: TC-014
+  summary: |
+    Восстановление пароля при входе на сайт по email с вводом корректных данных
+  requirement: |
+    При вводе пароля в окне "Forgot your Password", текущий пароль пользователя должен быть сброшен, данные для восстановления пароля направляются на указанный email
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Email = shatov102108@mail.ru
+  steps:
+    - Нажимаем кнопку "Sign in" в шапке сайта
+    - Нажимаем кнопку "Forgot your Password"
+    - В открывшемся окне заполняем поле Email тестовыми данными
+    - Нажимаем кнопку "Submit"
+  expected-result: |
+    Текущий пароль пользователя должен быть сброшен, данные для восстановления пароля направляются на указанный email
+
+- id: TC-015
+  summary: |
+    Проверка успешной аутентификации пользователя через GitHub
+  requirement: |
+    При вводе данных логина и пароля от GitHub, пользователь успешно проходит аутентификацию на сайте
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Логин на GitHub
+    Password на GitHub
+  steps: 
+    - Нажимаем кнопку "Sign in" в шапке сайта
+    - Нажимаем кнопку "Sign in with GitHub"
+    - Вводим тестовые данные Логин и Пароль
+    - Нажимаем кнопку "Sign in"
+  expected-result: |
+    Пользователь должен быть перенаправлен на главную страницу после успешной аутентификации
+
+- id: TC-016
+  summary: |
+    Проверка успешной аутентификации пользователя через Discord
+  requirement: |
+    При вводе данных логина и пароля от Discord, пользователь успешно проходит аутентификацию на сайте
+  prerequisites: |
+    Открыта главная страница проекта https://codebattle.hexlet.io/
+  test-data: |
+    Логин на GitHub
+    Password на GitHub
+  steps: 
+    - Нажимаем кнопку "Sign in" в шапке сайта
+    - Нажимаем кнопку "Sign in with Discord"
+    - Вводим тестовые данные Логин и Пароль
+    - Нажимаем кнопку "Sign in"
+  expected-result: |
+    Пользователь должен быть перенаправлен на главную страницу после успешной аутентификации
     
