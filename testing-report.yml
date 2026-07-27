@@ -32,49 +32,100 @@
 - id: TC-007
   summary: |
     Успешная регистрация нового пользователя с корректными данными
-  status: fail
-
+  status: pass
+  
 - id: TC-008
   summary: |
     Ошибка регистрации нового пользователя по email с некорректными Nickname
-  status: fail
+  status: pass
 
 - id: TC-009
   summary: |
     Ошибка регистрации нового пользователя по email с некорректными email
-  status: fail
+  status: pass
 
 - id: TC-010
   summary: |
     Ошибки регистрации нового пользователя по email с некорректными Password
-  status: fail
+  status: pass
 
 - id: TC-011
   summary: |
     Успешная регистрация нового пользователя через профиль на GitHub
-  status: fail
+  status: pass
 
 - id: TC-012
   summary: |
     Успешная регистрация нового пользователя через профиль на Discord
-  status: fail
+  status: pass
 
 - id: TC-013
   summary: |
     Успешная аутентификация пользователя по email с корректными данными
-  status: fail
+  status: pass
 
 - id: TC-014
   summary: |
     Восстановление пароля при входе на сайт по email с вводом корректных данных
-  status: fail
+  status: pass
 
 - id: TC-015
   summary: |
     Проверка успешной аутентификации пользователя через GitHub
-  status: fail
+  status: pass
 
 - id: TC-016
   summary: |
     Проверка успешной аутентификации пользователя через Discord
-  status: fail
+  status: pass
+
+- id: TC-017
+  summary: |
+    Создание битвы
+  status: pass
+
+- id: TC-018
+  summary: |
+    Присоединение к битве с другим пользователем
+  status: pass
+
+- id: TC-019
+  summary: |
+    Общение в чате во время битвы с другим игроком
+  status: pass
+
+- id: TC-020
+  summary: |
+    Смена языка программирования во время битвы
+  status: pass
+
+- id: TC-021
+  summary: |
+    Завершение битвы по истечению времени
+  status: pass
+
+- id: TC-022
+  summary: |
+    Реванш после завершения битвы против игрока
+  status: pass
+
+- id: TC-023
+  summary: |
+    Присоединение к уже идущей, являясь зрителем
+  status: pass
+
+- id: TC-024
+  summary: |
+    Присоединение к уже идущей битве, являясь участником через кнопку "Присоединиться к битве"
+  status: pass
+
+- id: TC-025
+  summary: |
+    Присоединение к уже идущей битве, являясь участником через кнопку "Продолжить битву"
+  status: pass
+
+- id: TC-025
+  summary: |
+    Общение в чате во время битвы с пользователями, являясь зрителем
+  status: pass
+
