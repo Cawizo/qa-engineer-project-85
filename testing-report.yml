@@ -239,7 +239,37 @@
     Выход из аккаунта через дропдаун-меню
   status: pass
 
-- id: TC-048
+- id: TC-049
   summary: |
     Проверка перевода интерфейса на русский язык
   status: fail
+
+- id: TC-050
+  summary: |
+    Создание битвы с другим пользователем
+  status: pass
+
+- id: TC-051
+  summary: |
+    Создание битвы с другом по приглашению
+  status: pass
+  
+- id: TC-052
+  summary: |
+    Создание битвы с ботом
+  status: pass
+
+- id: TC-053
+  summary: |
+    Победа в битве — решение задачи первым
+  status: pass
+
+- id: TC-054
+  summary: |
+    Проигрыш в битве — соперник решил задачу первым
+  status: pass
+
+- id: TC-055
+  summary: |
+    Завершение битвы через сдачу
+  status: pass
